@@ -13,3 +13,5 @@ class Livro(models.Model):
         verbose_name = "Livro"
         verbose_name_plural = "Livros"
         ordering = ["-data_publicacao"]
+
+
