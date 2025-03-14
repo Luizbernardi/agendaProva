@@ -1,17 +1,17 @@
 from django.db import models
 
-class Livro(models.Model):
-    titulo = models.CharField(max_length=200, verbose_name="Título")
-    autor = models.CharField(max_length=100)
-    descricao = models.TextField(verbose_name="Descrição", blank=True, null=True)
-    data_publicacao = models.DateField(verbose_name="Data de Publicação")
+class Contato(models.Model):
+    nome = models.CharField(max_length=200, verbose_name="Nome")
+    telefone = models.CharField(max_length=15, verbose_name="Telefone")
+    email = models.EmailField(verbose_name="Email", blank=True, null=True)
+    endereco = models.CharField(max_length=255, verbose_name="Endereço")
 
     def __str__(self):
-        return self.titulo
+        return self.nome
 
     class Meta:
-        verbose_name = "Livro"
-        verbose_name_plural = "Livros"
-        ordering = ["-data_publicacao"]
+        verbose_name = "Contato"
+        verbose_name_plural = "Contatos"
+        ordering = ["nome"]
 
 

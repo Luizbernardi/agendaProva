@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Livro  
+from .models import Contato
 
-@admin.register(Livro)
-class LivroAdmin(admin.ModelAdmin):
-    list_display = ("titulo", "autor", "data_publicacao")
-    search_fields = ("titulo", "autor")
-    list_filter = ("data_publicacao",)
+
+@admin.register(Contato)
+class ContatoAdmin(admin.ModelAdmin):
+    list_display = ("nome", "telefone", "email", "endereco")
+    search_fields = ("nome", "telefone", "email")
+    list_filter = ("nome",)
