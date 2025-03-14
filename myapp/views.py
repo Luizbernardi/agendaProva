@@ -12,8 +12,6 @@ class HomeView(View):
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
     
-
-
 class ContatoListView(ListView):
     model = Contato
     template_name = 'myapp/listagem_contatos.html'
