@@ -3,5 +3,9 @@ venv
 \venv
 
 db.sqlite3
+<<<<<<< HEAD
 .\db.sqlite3
 \db.sqlite3
+=======
+.\db.sqlite3
+>>>>>>> 606970b90cf31368be59b928f16af736b4735aa6
