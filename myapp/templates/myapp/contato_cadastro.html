@@ -45,6 +45,15 @@
                 <label for="endereco" class="form-label">Endereço:</label>
                 <input type="text" id="endereco" name="endereco" class="form-control">
             </div>
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categoria:</label>
+                <select id="categoria" name="categoria" class="form-select" required>
+                    <option value="">---</option> 
+                    {% for categoria in categorias %}
+                        <option value="{{ categoria.id }}">{{ categoria.nome }}</option>
+                    {% endfor %}
+                </select>
+            </div>
             <div>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </div>

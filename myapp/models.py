@@ -11,6 +11,7 @@ class Contato(models.Model):
     telefone = models.CharField(max_length=15, verbose_name="Telefone")
     email = models.EmailField(verbose_name="Email", blank=True, null=True)
     endereco = models.CharField(max_length=255, verbose_name="Endereço")
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name="Categoria")
 
     def __str__(self):
         return self.nome
@@ -19,5 +20,6 @@ class Contato(models.Model):
         verbose_name = "Contato"
         verbose_name_plural = "Contatos"
         ordering = ["nome"]
+
 
 

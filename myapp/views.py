@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
-from .models import Contato
+from .models import Contato , Categoria
 from django.views import View
 
 class HomeView(View):
@@ -26,8 +26,13 @@ class ContatoDetalhesView(DetailView):
 class ContatoCreateView(CreateView):
     model = Contato
     template_name = 'myapp/contato_cadastro.html'
-    fields = ['nome', 'telefone', 'email', 'endereco']
+    fields = ['nome', 'telefone', 'email', 'endereco', 'categoria']
     success_url = reverse_lazy('listagem_contatos')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categorias'] = Categoria.objects.all() 
+        return context
 
     def post(self, request, *args, **kwargs):
         response = super().post(request, *args, **kwargs)
