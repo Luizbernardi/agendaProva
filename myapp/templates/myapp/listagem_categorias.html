@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem de Contatos</title>
+    <title>Listagem de Categorias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -37,26 +37,18 @@
             <thead>
                 <tr>
                     <th class="bg-dark text-white">Nome</th>
-                    <th class="bg-dark text-white">Telefone</th>
-                    <th class="bg-dark text-white">Email</th>
-                    <th class="bg-dark text-white">Endereço</th>
-                    <th class="bg-dark text-white">Categoria</th>
                 </tr>
             </thead>
             <tbody>
-                {% for contato in contatos %}
+                {% for categoria in categorias %}
                 <tr>
                     <td>
-                        <a href="{% url 'contato_detalhe' contato.id %}">{{ contato.nome }}</a>
+                        <a href="{% url 'categoria_detalhe' categoria.id %}">{{ categoria.nome }}</a>
                     </td>
-                    <td>{{ contato.telefone }}</td>
-                    <td>{{ contato.email }}</td>
-                    <td>{{ contato.endereco }}</td>
-                    <td>{{ contato.categoria }}</td>
                 </tr>
                 {% empty %}
                 <tr>
-                    <td colspan="4" class="text-center">Nenhum contato cadastrado.</td>
+                    <td colspan="4" class="text-center">Nenhuma categoria cadastrada.</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -80,7 +72,7 @@
                 {% endif %}
             </ul>
             <div class="mb-4 text-center">
-                <a href="{% url 'contato_cadastro' %}" class="btn btn-primary">Cadastrar Novo Contato</a>
+                <a href="{% url 'categoria_cadastro' %}" class="btn btn-primary">Cadastrar Nova Categoria</a>
             </div>
         </nav>
     </div>

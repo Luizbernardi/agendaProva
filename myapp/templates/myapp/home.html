@@ -8,33 +8,40 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <a class="navbar-brand text-white" href="/">Agenda</a>
+        <a class="navbar-brand text-white ms-3" href="/">Agenda</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link text-white" href="/">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{% url 'listagem_contatos' %}">Contatos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{% url 'contato_cadastro' %}">Cadastro</a>
+                    <a class="nav-link text-white" href="{% url 'listagem_categorias' %}">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'contato_cadastro' %}">Cadastro contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{% url 'categoria_cadastro' %}">Cadastro categoria</a>
                 </li>
             </ul>
         </div>
     </nav>
-
     <div class="container mt-5">
         <div class="jumbotron text-center">
             <h1 class="display-4">Bem-vindo à Agenda</h1>
             <p class="lead">Gerencie seus contatos e compromissos de forma fácil e eficiente.</p>
             <hr class="my-4">
             <p>Utilize as abas acima para navegar entre as funcionalidades do sistema.</p>
-            <a class="btn btn-primary btn-lg" href="{% url 'listagem_contatos' %}" role="button">Ver Contatos</a>
-            <a class="btn btn-secondary btn-lg" href="{% url 'contato_cadastro' %}" role="button">Adicionar Contato</a>
+            <a class="btn btn-outline-primary btn-lg" href="{% url 'listagem_contatos' %}" role="button">Ver Contatos</a>
+            <a class="btn btn-outline-primary btn-lg" href="{% url 'listagem_categorias' %}" role="button">Ver Categorias</a>
+            <a class="btn btn-outline-secondary btn-lg" href="{% url 'contato_cadastro' %}" role="button">Adicionar Contato</a>
+            <a class="btn btn-outline-secondary btn-lg" href="{% url 'categoria_cadastro' %}" role="button">Adicionar Categoria</a>
         </div>
     </div>
 
