@@ -11,10 +11,11 @@
 </head>
 <body class="bg-home">
     {% include 'myapp/includes/navhome.html' %}
+    <hr class="mt-0">
     <div class="container d-flex align-items-center justify-content-center" style="min-height: 90vh;">
-        <div class="card shadow-sm" style="width: 100%; max-width: 400px;">
-            <div class="card-header bg-primary text-white text-center">
-                <h4 class="mb-0">Registrar</h4>
+        <div class="card shadow-sm bg-primary-subtle" style="width: 100%; max-width: 400px;">
+            <div class=" text-center">
+                <h4 class="mt-2">Registrar</h4>
             </div>
             <div class="card-body">
                 <form method="POST">
@@ -40,7 +41,7 @@
                     {{ error_message }}
                 </div>
                 {% endif %}
-                <button type="submit" class="btn btn-primary w-100">Registrar</button>
+                <button type="submit" class="btn btn-dark w-100">Registrar</button>
                 </form>
             </div>
             <div class="card-footer text-center">

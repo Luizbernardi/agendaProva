@@ -12,6 +12,7 @@ class Contato(models.Model):
     email = models.EmailField(verbose_name="Email", blank=True, null=True)
     endereco = models.CharField(max_length=255, verbose_name="Endereço")
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, verbose_name="Categoria")
+    imagem = models.ImageField(blank=True, null=True, verbose_name="Imagem")
 
     def __str__(self):
         return self.nome
