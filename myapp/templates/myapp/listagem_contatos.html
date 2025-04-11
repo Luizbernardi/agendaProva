@@ -23,6 +23,7 @@
                     <table class="table table-striped table-hover table-bordered">
                         <thead class="table-dark">
                             <tr>
+                                <th scope="col"></th>
                                 <th scope="col">Nome</th>
                                 <th scope="col">Telefone</th>
                                 <th scope="col">Email</th>
@@ -33,6 +34,12 @@
                         <tbody>
                             {% for contato in contatos %}
                             <tr>
+                                <td class="text-center">
+                                    {% if contato.imagem %}
+                                        <img src="{{ contato.imagem.url }}" alt="{{ contato.nome }}" class="img-thumbnail rounded-circle" style="width: 50px; height: 50px;">
+                                    {% else %}
+                                        <i class="bi bi-person-circle fs-4"></i>
+                                    {% endif %}
                                 <td>
                                     <a href="{% url 'contato_detalhe' contato.id %}" class="text-primary fw-bold">
                                         {{ contato.nome }}
